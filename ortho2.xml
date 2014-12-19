@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<command version="3" name="Orthogonalize2 (experimental)" icon="ortho2.png" run="python ortho2.py">
+	<parameter required="true" type="any" maxinstances="0">
+		<name>Objects</name>
+		<description>Ways, some nodes</description>
+	</parameter>
+</command>

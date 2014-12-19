@@ -9,7 +9,7 @@
 #
 #       Formula = [ <fix string> ] [ #tag=<tag># ] [ <fix string> ] [ #p=<param># ] [ <fix string> ]
 #       <tag> - tag name (key) of this object
-#       <param> =    lat / lon / uid / ver / user / chg / nodes / ways / rels
+#       <param> =    lat / lon / id / uid / ver / user / chg / nodes / ways / rels
 #       uid - user id; nodes - valid for ways and relations; lat and lon works only for nodes
 #       note: <fix string> should contain "" to have " in result (due to interface of CommandLine)
 #
@@ -17,6 +17,7 @@
 #
 #       Made from regexp.py ( Copyright 2011 Hind <foxhind@gmail.com> )
 #       by OverQuantum, 2014-12-06 - 2014-12-09
+#       2014-12-15 added param "id"
 #
 #       This program is free software; you can redistribute it and/or modify
 #       it under the terms of the GNU General Public License as published by
@@ -68,6 +69,8 @@ def process(objects, newtag, formula, objtype):
                 repl=str(format(objects[objid][LON]))
             elif paramname == 'uid' and UID in objects[objid]:
                 repl=str(objects[objid][UID])
+            elif paramname == 'id':
+                repl=str(objid)
             elif paramname == 'ver' and VERSION in objects[objid]:
                 repl=str(objects[objid][VERSION])
             elif paramname == 'user' and USER in objects[objid]:
